@@ -9,9 +9,7 @@ import matplotlib.pyplot as plt
 # 2) Construct loss and optimizer
 
 # 3) Training loop
-
-# forward pass: compute prediction and loss
-
+# - forward pass: compute prediction and loss
 # - backward pass: gradients
 # - update weights
 
