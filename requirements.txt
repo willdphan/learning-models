@@ -1,0 +1,6 @@
+torch
+numpy 
+math
+torchvision
+sklearn
+matplotlib.pyplot
