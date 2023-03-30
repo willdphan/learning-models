@@ -9,9 +9,9 @@ import matplotlib.pyplot as plt
 # 2) Construct loss and optimizer
 
 # 3) Training loop
-# - forward pass: compute prediction and loss
-# - backward pass: gradients
-# - update weights
+#   - forward pass: compute prediction and loss
+#   -  backward pass: gradients
+#   - update weights
 
 
 # 0) DATA PREPARATION
@@ -29,6 +29,10 @@ y = torch.from_numpy(y_numpy.astype(np.float32))
 # we want to reshape the y because its currently one row
 # we want to reshape it to a column vector so we want to put each value in its own row
 # .view() is a method that reshapes a tensor
+# first argument .shape() notes how many rows in reshaped tensor,
+# '0' is in brackets to extract the first element from the tuple, which corresponds 
+# to the number of samples in the input data.
+# second arg specifies the number of columns
 y = y.view(y.shape[0], 1)
 
 # get number of samples and number of features
@@ -51,6 +55,7 @@ learning_rate = 0.01
 # with pytorch, this initializes an instance of the Mean Squared Error (MSE) loss function,
 # which is used as a criterion to measure the difference between the predicted output
 # and the target output in a regression problem.
+# TLDR; it calcs the difference in results between the predicted and actual values
 criterion = nn.MSELoss()
 
 # initializes an instance of the Stochastic Gradient Descent (SGD) algorithm/optimizer with a given learning rate
@@ -59,6 +64,8 @@ criterion = nn.MSELoss()
 # These parameters include the weights and biases of the neural network layers. 
 # The lr parameter specifies the learning rate, which determines the step size 
 # of the optimizer during parameter updates and is defined above as .01
+# TLDR; SGD is an optimization algorithm that we are using (SGD) to update the parameters of a PyTorch 
+# model during training.
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)  
 
 # 3) TRAINING LOOP: FORWARD PASS, LOSS, BACKWARD PASS, UPDATE WEIGHTS
