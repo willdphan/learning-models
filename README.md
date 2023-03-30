@@ -20,8 +20,8 @@ Or just use this command to install everything for you.
 
 The Repo goes over the basics of PyTorch Syntax. While using PyTorch, it goes over different algorithms such as:
 
-    Linear Regression
-    Logistic Regression
+- Linear Regression
+- Logistic Regression
 
 ## License
 
